@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import http from "http";
-import { PrismaClient } from "@prisma/client";
 import routes from "./routes/route.ts";
 import { initializeSocket } from "./ai/ai-chat.ts";
 
