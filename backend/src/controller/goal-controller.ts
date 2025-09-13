@@ -1,7 +1,7 @@
 import type{ Response } from "express";
 import { evaluateAssessment } from "../ai/ai-unlock.js";
 import { generateAiJourneyChunks } from "../ai/ai-service.js";
-import prisma from "../../prisma/prisma.js";
+import prisma from "../prisma/prisma.js";
 
 const calculateGoalProgress = (goal: any) => {
     if (!goal || !goal.chunks) return 0;
