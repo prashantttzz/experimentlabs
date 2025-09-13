@@ -11,7 +11,7 @@ const server = http.createServer(app);
 const PORT = process.env.PORT || 4000;
 app.use(
   cors({
-    origin: "https://experimentlabs.vercel.app/",
+    origin: "https://experimentlabs.vercel.app",
     credentials: true,
   })
 );
