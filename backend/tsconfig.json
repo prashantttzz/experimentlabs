@@ -7,8 +7,6 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "rootDir": "./src",
     "outDir": "./dist" // Good practice to specify an output directory
-  },
-  "include": ["src/**/*.ts", "ai.ts"]
+  }
 }
