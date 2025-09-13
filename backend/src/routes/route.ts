@@ -1,6 +1,6 @@
 import { Router } from "express";
-import goalroutes from "./goal.ts";
-import authroutes from "./auth.ts";
+import goalroutes from "./goal";
+import authroutes from "./auth";
 const router:Router =Router();
 
 router.use("/goal",goalroutes)

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { authMiddleware } from "../middleware/auth.ts";
-import { assessChunk, chatHistory, createNewGoal, fetchGoalById, getAllGoals } from "../controller/goal-controller.ts";
+import { authMiddleware } from "../middleware/auth";
+import { assessChunk, chatHistory, createNewGoal, fetchGoalById, getAllGoals } from "../controller/goal-controller";
 const router: Router = Router();
 
 router.post("/new", authMiddleware, createNewGoal);

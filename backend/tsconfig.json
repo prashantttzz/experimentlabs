@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "moduleResolution": "node",
-    "rootDir": ".",
-    "outDir": "dist",
+    "target": "es2020",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "esModuleInterop": true
+    "skipLibCheck": true
   },
-  "include": ["src", "prisma"]
+  "include": ["src/**/*.ts", "ai.ts"]
 }
