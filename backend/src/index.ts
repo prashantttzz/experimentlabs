@@ -2,8 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import http from "http";
-import routes from "./routes/route";
-import { initializeSocket } from "./ai/ai-chat";
+import routes from "./routes/route.js";
+import { initializeSocket } from "./ai/ai-chat.js";
 
 dotenv.config();
 const app = express();

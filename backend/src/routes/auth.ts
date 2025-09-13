@@ -1,9 +1,9 @@
 import type { Request, Response } from "express";
-import prisma from "../prisma/prisma";
+import prisma from "../prisma/prisma.js";
 import { Router } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { authMiddleware } from "../middleware/auth";
+import { authMiddleware } from "../middleware/auth.js";
 
 interface AuthRequest extends Request {
   user?: { userId: string };

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import goalroutes from "./goal";
-import authroutes from "./auth";
+import goalroutes from "./goal.js";
+import authroutes from "./auth.js";
 const router:Router =Router();
 
 router.use("/goal",goalroutes)
