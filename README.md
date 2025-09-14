@@ -6,9 +6,13 @@ Achievo is a comprehensive web application designed to help users break down lar
 🔗 Live Demo & Submission Links
 Live Application URL: https://experimentlabs.vercel.app
 
-Demo Video URL: https://youtu.be/T_UHfgMzoa0
+Demo Video URL:https://youtu.be/0mHkOJ0-iHY
 
 GitHub Repository URL: https://github.com/prashantttzz/experimentlabs
+
+demo account ->
+email - prashant@gmail.com
+password - prashant
 
 ✨ Core Features
 🔐 Authentication System:
