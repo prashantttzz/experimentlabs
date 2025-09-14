@@ -106,7 +106,7 @@ export function AITutorModal({
 
   useEffect(() => {
     if (initialHistory) {
-      const formattedHistory = initialHistory.data.map((msg: any) => ({
+      const formattedHistory = initialHistory.map((msg: any) => ({
         ...msg,
         id: msg.id,
         sender: msg.sender === "USER" ? "user" : "ai",

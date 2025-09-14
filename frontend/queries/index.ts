@@ -41,13 +41,27 @@ const getAllGoalsApi = () => apiFetch("/goal/all");
 const getGoalByIdApi = (id: string) => apiFetch(`/goal/${id}`);
 const getChatHistoryApi = (goalId: string, chunkId: string) =>
   apiFetch(`/goal/chunks/${chunkId}/chathistory`);
-const assessChunkApi = ({
+
+const assessChunkApi = async({
   goalId,
   chunkId,
 }: {
   goalId: string;
   chunkId: string;
-}) => apiFetch(`/goal/${goalId}/chunks/${chunkId}/assess`, { method: "POST" });
+}) => {
+    const token = localStorage.getItem("authToken");
+    const res = await fetch(`${baseUrl}/api/goal/${goalId}/chunks/${chunkId}/assess`,{
+      method:'POST',
+      headers:{
+        Authorization : `Bearer ${token}`
+      }
+    }) 
+    const data = await res.json();
+    if (!res.ok) {
+    throw new Error(data.feedback || "An API error occurred.");
+  }
+  return data;
+};
 
 export const useCreateGoal = () => {
   const queryClient = useQueryClient();
@@ -96,7 +110,7 @@ export const useLoginUser = () => {
 export const useAssessChunk = (goalId: string, chunkId: string) => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn:assessChunkApi,
+    mutationFn: assessChunkApi,
     onSuccess: (data: any) => {
       queryClient.invalidateQueries({ queryKey: ["goal", goalId] });
       toast.success(

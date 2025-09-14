@@ -21,6 +21,7 @@ import {
 import { useCreateGoal } from "@/queries";
 import { toast } from "sonner";
 import { Loader } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface CreateGoalModalProps {
   isOpen: boolean;
@@ -41,6 +42,7 @@ export function CreateGoalModal({ isOpen, onClose }: CreateGoalModalProps) {
   const [errors, setErrors] = useState<FormErrors>({});
   const { mutate, isPending, error } = useCreateGoal();
 
+const router = useRouter();
   const validateStep1 = (): boolean => {
     const newErrors: FormErrors = {};
 
@@ -101,7 +103,7 @@ export function CreateGoalModal({ isOpen, onClose }: CreateGoalModalProps) {
       {
         onSuccess: () => {
           toast.success("goal created successfully.");
-          onClose();
+         onClose();
         },
         onError: () => {
           toast.error(error?.message||"error creating goal ");
@@ -344,7 +346,7 @@ export function CreateGoalModal({ isOpen, onClose }: CreateGoalModalProps) {
                   disabled={isPending}
                   className="bg-green-600 hover:bg-green-700 text-white disabled:opacity-50"
                 >
-                  {isPending ? "Creating Journey..." :(<>creating <Loader className="animate-spin"/> </>)}
+                  {!isPending ? "Create Journey" :(<>creating <Loader className="animate-spin"/> </>)}
                 </Button>
               </div>
             </div>

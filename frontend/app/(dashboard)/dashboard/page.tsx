@@ -27,7 +27,7 @@ const Dashboard = () => {
     return toast.error("Failed to load goals");
   }
 
-  if (!data || data.data.length === 0) {
+  if (!data || data.length === 0) {
     return (
       <div className="h-full w-full flex flex-col items-center justify-center text-gray-400">
         <p>No goals yet. Start your journey!</p>
@@ -75,7 +75,7 @@ const Dashboard = () => {
 
         {/* Goals Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {data.data.map((goal: any) => (
+          {data.map((goal: any) => (
             <Card key={goal.id} className="glass-card card-hover rounded-xl">
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between">

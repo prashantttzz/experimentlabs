@@ -26,12 +26,11 @@ interface GoalJourneyContentProps {
 }
 
 export function GoalJourneyContent({ goalId }: GoalJourneyContentProps) {
-  const { data, isError, error, isLoading } = useGetGoalByid(goalId);
+  const { data:goal, isError, error, isLoading } = useGetGoalByid(goalId);
   const [selectedModule, setSelectedModule] = useState<string | null>(null);
   const [isTutorModalOpen, setIsTutorModalOpen] = useState(false);
   const [selectedModuleTitle, setSelectedModuleTitle] = useState("");
   const [chunkId, setChunkId] = useState("");
-
   if (isError) {
     toast.error(error.message);
     return (
@@ -41,7 +40,7 @@ export function GoalJourneyContent({ goalId }: GoalJourneyContentProps) {
     );
   }
 
-  if (!data || isLoading) {
+  if (!goal || isLoading) {
     return (
       <div className="flex h-full w-full items-center justify-center">
         <Loader className="animate-spin text-green-500" />
@@ -49,7 +48,6 @@ export function GoalJourneyContent({ goalId }: GoalJourneyContentProps) {
     );
   }
   
-  const  goal  = data.data;
   const  chunks = goal.chunks;
   const completedModules = chunks.filter((c:any) => c.status === 'COMPLETED').length;
   const currentModule = chunks.find((c:any) => c.status === 'CURRENT');
