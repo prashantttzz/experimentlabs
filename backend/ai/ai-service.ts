@@ -13,6 +13,7 @@ const generateDefaultChunks = () => {
       description: "Understand the fundamental concepts and get set up.",
       week: "Week 1-2",
       duration: "2 weeks",
+      order:1,
       difficulty: "Beginner",
       objectives: ["Complete initial setup", "Learn core terminology"],
       skills: ["Setup", "Fundamentals"],
@@ -22,6 +23,7 @@ const generateDefaultChunks = () => {
       description: "Dive into the main topics and practice with exercises.",
       week: "Week 3-4",
       duration: "2 weeks",
+            order:2,
       difficulty: "Intermediate",
       objectives: ["Complete 3 core exercises", "Build a small project"],
       skills: ["Core Skills", "Project Building"],
@@ -31,6 +33,8 @@ const generateDefaultChunks = () => {
       description: "Explore advanced concepts and finalize your understanding.",
       week: "Week 5-6",
       duration: "2 weeks",
+            order:3,
+
       difficulty: "Advanced",
       objectives: [
         "Tackle an advanced tutorial",
